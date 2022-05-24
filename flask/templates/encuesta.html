@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Healthy Mind - Encuesta</title>
+        <link rel="icon" type="image/x-icon" href="static/assets/icon.png" />
+            <!-- Font Awesome icons (free version)-->
+            <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+            <!-- Google fonts-->
+            <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+            <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+            <!-- Core theme CSS (includes Bootstrap)-->
+            <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/styles.css') }}"/>
+    </head>
+
+<body id="page-top">
+    <!-- Navigation-->
+    <style>
+        .masthead{
+        position: relative;
+        width: 100%;
+        height: auto;
+        min-height: 35rem;
+        padding: 15rem 0;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../static/assets/img/ezgif.com-gif-maker.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-size: cover;
+        }
+    </style>
+        <header class="masthead">
+            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+                <div class="d-flex justify-content-center">
+                    <div class="text-center">
+                        <h1 class="mx-auto my-0 text-uppercase">Test</h1>
+                        <h2 class="text-white-50 mx-auto mt-2 mb-5">Test de depresión</h2>
+                        <a class="btn btn-primary" href="#fm-preguntas">Comenzar test</a>
+                        <div class = "hr"></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <form action="encuestaSend" id="fm-preguntas" method="POST">
+            <h1>Toma tu tiempo para responder las siguientes preguntas</h1>
+            <h3>Tristeza</h3>
+            <input type="radio" id="p1.0" name="p1" value="0" required>
+            <label for="p1.0">No me siento triste.</label><br>
+            <input type="radio" id="p1.1" name="p1" value="1">
+            <label for="p1.1">No me siento triste gran parte del tiempo.</label><br>
+            <input type="radio" id="p1.2" name="p1" value="2">
+            <label for="p1.2">Me siento triste todo el tiempo.</label><br>
+            <input type="radio" id="p1.3" name="p1" value="3">
+            <label for="p1.3">Me siento tan triste o soy tan infeliz que no puedo soportarlo.</label><br>
+            <h3>Pesimismo</h3>
+            <input type="radio" id="p2.0" name="p2" value="0" required>
+            <label for="p2.0">No estoy desalentado respecto a mi futuro.</label><br>
+            <input type="radio" id="p2.1" name="p2" value="1">
+            <label for="p2.1">Me siento mas desalentado respecto a mi futuro de lo que solia estarlo.</label><br>
+            <input type="radio" id="p2.2" name="p2" value="2">
+            <label for="p2.2">No espero que las cosas funcionen para mi.</label><br>
+            <input type="radio" id="p2.3" name="p2" value="3">
+            <label for="p2.3">Siento que no hay esperanza para mi futuro y que sólo puede empeorar.</label><br>
+            
+            <h3>Fracaso</h3>
+            <input type="radio" id="p3.0" name="p3" value="0" required>
+            <label for="p3.0">No me siento como un fracasado.</label><br>
+            <input type="radio" id="p3.1" name="p3" value="1">
+            <label for="p3.1">He fracasado más de lo que hubiera debido.</label><br>
+            <input type="radio" id="p3.2" name="p3" value="2">
+            <label for="p3.2">Cuando miro hacia atrás, veo muchos fracasos.</label><br>
+            <input type="radio" id="p3.3" name="p3" value="3">
+            <label for="p3.3">Siento que como persona soy un fracaso total.</label><br>
+
+            <h3>Perdida de placer</h3>
+            <input type="radio" id="p4.0" name="p4" value="0" required>
+            <label for="p4.0">Obtengo tanto placer como siempre por las cosas de las que disfruto.</label><br>
+            <input type="radio" id="p4.1" name="p4" value="1">
+            <label for="p4.1">No disfruto de las cosas como solia hacerlo.</label><br>
+            <input type="radio" id="p4.2" name="p4" value="2">
+            <label for="p4.2">Obtengo muy poco placer de las cosas que solia disfrutar.</label><br>
+            <input type="radio" id="p4.3" name="p4" value="3">
+            <label for="p4.3">No puedo obtener ningun placer de las cosas que solia disfrutar.</label><br>
+
+            <h3>Sentimientos de culpa</h3>
+            <input type="radio" id="p5.0" name="p5" value="0" required>
+            <label for="p5.0">No me siento particularmente culpable.</label><br>
+            <input type="radio" id="p5.1" name="p5" value="1">
+            <label for="p5.1">Me siento culpable respecto de varias cosasque he hecho o deberia haber hecho.</label><br>
+            <input type="radio" id="p5.2" name="p5" value="2">
+            <label for="p5.2">Me siento bastante culpable la mayor parte del tiempo.</label><br>
+            <input type="radio" id="p5.3" name="p5" value="3">
+            <label for="p5.3">Me siento culpable todo el tiempo.</label><br>
+
+            <h3>Sentimientos de castigo</h3>
+            <input type="radio" id="p6.0" name="p6" value="0" required>
+            <label for="p6.0">No me siento que este siendo castigado.</label><br>
+            <input type="radio" id="p6.1" name="p6" value="1">
+            <label for="p6.1">Siento que talvez pueda ser castigado.</label><br>
+            <input type="radio" id="p6.2" name="p6" value="2">
+            <label for="p6.2">Espero ser castigado.</label><br>
+            <input type="radio" id="p6.3" name="p6" value="3">
+            <label for="p6.3">Siento que estoy siendo castigado.</label><br>
+
+            <h3>Disconformidad con uno mismo</h3>
+            <input type="radio" id="p7.0" name="p7" value="0" required>
+            <label for="p7.0">Siento acerca de mi lo mismo de siempre.</label><br>
+            <input type="radio" id="p7.1" name="p7" value="1">
+            <label for="p7.1">He perdido la confianza en mi mismo.</label><br>
+            <input type="radio" id="p7.2" name="p7" value="2">
+            <label for="p7.2">Estoy decepcionado conmigo mismo.</label><br>
+            <input type="radio" id="p7.3" name="p7" value="3">
+            <label for="p7.3">No me gusto a mi mismo.</label><br>
+
+            <h3>Autocritica</h3>
+            <input type="radio" id="p8.0" name="p8" value="0" required>
+            <label for="p8.0">No me critico ni me culpo mas de lo habitual.</label><br>
+            <input type="radio" id="p8.1" name="p8" value="1">
+            <label for="p8.1">Estoy mas critico conmigo mismo de lo que solia estarlo.</label><br>
+            <input type="radio" id="p8.2" name="p8" value="2">
+            <label for="p8.2">Me critico a mi mismo por todos mis errores.</label><br>
+            <input type="radio" id="p8.3" name="p8" value="3">
+            <label for="p8.3">Me culpo a mi mismo por todo lo malo que sucede.</label><br>
+
+            <h3>Pensamientos o deseos suicidas</h3>
+            <input type="radio" id="p9.0" name="p9" value="0" required>
+            <label for="p9.0">No tengo ningun pensamiento de matarme.</label><br>
+            <input type="radio" id="p9.1" name="p9" value="1">
+            <label for="p9.1">He tenido pensamientos de matarme pero no lo haria.</label><br>
+            <input type="radio" id="p9.2" name="p9" value="2">
+            <label for="p9.2">Querria matarme.</label><br>
+            <input type="radio" id="p9.3" name="p9" value="3">
+            <label for="p9.3">Me mataria si tuviera la oportunidad de hacerlo.</label><br>
+
+            <h3>Llanto</h3>
+            <input type="radio" id="p10.0" name="p10" value="0" required>
+            <label for="p10.0">No lloro mas de lo que solia hacerlo.</label><br>
+            <input type="radio" id="p10.1" name="p10" value="1">
+            <label for="p10.1">Lloro mas de lo que solia hacerlo.</label><br>
+            <input type="radio" id="p10.2" name="p10" value="2">
+            <label for="p10.2">Lloro por cualquier pequeñez.</label><br>
+            <input type="radio" id="p10.3" name="p10" value="3">
+            <label for="p10.3">Siento ganas de llorar pero no puedo.</label><br>
+
+            <h3>Agitacion</h3>
+            <input type="radio" id="p11.0" name="p11" value="0" required>
+            <label for="p11.0">No estoy mas inquieto o tenso que lo habitual.</label><br>
+            <input type="radio" id="p11.1" name="p11" value="1">
+            <label for="p11.1">Me siento mas inquieto o tenso que lo habitual.</label><br>
+            <input type="radio" id="p11.2" name="p11" value="2">
+            <label for="p11.2">Estoy tan inquieto o agitado que me es dificil quedarme quieto.</label><br>
+            <input type="radio" id="p11.3" name="p11" value="3">
+            <label for="p11.3">Estoy tan inquieto o agitado que tengo que estar siempre en movimiento o haciendo algo.</label><br>
+            
+            <h3>Perdida de Interes</h3>
+            <input type="radio" id="p12.0" name="p12" value="0" required>
+            <label for="p12.0">No he perdido el interes en otras actividades o personas.</label><br>
+            <input type="radio" id="p12.1" name="p12" value="1">
+            <label for="p12.1">Estoy menos interesado que antes en personas o actividades.</label><br>
+            <input type="radio" id="p12.2" name="p12" value="2">
+            <label for="p12.2">He perdido casi todo el interes en otras personas o cosas.</label><br>
+            <input type="radio" id="p12.3" name="p12" value="3">
+            <label for="p12.3">Me es dificil interesarme por algo.</label><br>
+            
+            <h3>Indecision</h3>
+            <input type="radio" id="p13.0" name="p13" value="0" required>
+            <label for="p13.0">Tomo mis propias decisiones tan bien como siempre.</label><br>
+            <input type="radio" id="p13.1" name="p13" value="1">
+            <label for="p13.1">Me resulta mas dificil que de costumbre tomar decisiones.</label><br>
+            <input type="radio" id="p13.2" name="p13" value="2">
+            <label for="p13.2">Encuentro mucha mas dificultad que antes para tomar decisiones.</label><br>
+            <input type="radio" id="p13.3" name="p13" value="3">
+            <label for="p13.3">Tengo problemas para tomar cualquier decision.</label><br>
+
+            <h3>Desvalorizacion</h3>
+            <input type="radio" id="p14.0" name="p14" value="0" required>
+            <label for="p14.0">No me siento que yo no sea valioso.</label><br>
+            <input type="radio" id="p14.1" name="p14" value="1">
+            <label for="p14.1">No me considero a mi mismo tan valioso y util como solia considerarme.</label><br>
+            <input type="radio" id="p14.2" name="p14" value="2">
+            <label for="p14.2">Me siento menos valioso cuando me comparo con otros.</label><br>
+            <input type="radio" id="p14.3" name="p14" value="3">
+            <label for="p14.3">Siento que no valgo nada.</label><br>
+
+            <h3>Perdida de energia</h3>
+            <input type="radio" id="p15.0" name="p15" value="0" required>
+            <label for="p15.0">Tengo tanta energia como siempre.</label><br>
+            <input type="radio" id="p15.1" name="p15" value="1">
+            <label for="p15.1">Tengo menos energia que la que solia tener.</label><br>
+            <input type="radio" id="p15.2" name="p15" value="2">
+            <label for="p15.2">No tengo suficiente energia para hacer demasiado.</label><br>
+            <input type="radio" id="p15.3" name="p15" value="3">
+            <label for="p15.3">No tengo suficiente energia para hacer nada.</label><br>
+
+            <h3>Cambios en los habitos del sueño</h3>
+            <input type="radio" id="p16.0" name="p16" value="0" required>
+            <label for="p16.0">No he experimentado ningun cambio en mis habitos de sueño.</label><br>
+            <input type="radio" id="p16.1a" name="p16" value="1">
+            <label for="p16.1a">Duermo un poco mas de lo habitual.</label><br>
+            <input type="radio" id="p16.1b" name="p16" value="1">
+            <label for="p16.1b">Duermo un poco menos de lo habitual.</label><br>
+            <input type="radio" id="p16.2a" name="p16" value="2">
+            <label for="p16.2a">Duermo mucho mas de lo habitual.</label><br>
+            <input type="radio" id="p16.2b" name="p16" value="2">
+            <label for="p16.2b">Duermo mucho menos de lo habitual.</label><br>
+            <input type="radio" id="p16.3a" name="p16" value="3">
+            <label for="p16.3a">Duermo la mayor parte del dia.</label><br>
+            <input type="radio" id="p16.3b" name="p16" value="3">
+            <label for="p16.3b">Me despierto 1-2 horas mas temprano y no puedo volver a dormir.</label><br>
+
+            <h3>Irritabilidad</h3>
+            <input type="radio" id="p17.0" name="p17" value="0" required>
+            <label for="p17.0">No estoy tan irritable que lo habitual.</label><br>
+            <input type="radio" id="p17.1" name="p17" value="1">
+            <label for="p17.1">Estoy mas irritable que lo habitual.</label><br>
+            <input type="radio" id="p17.2" name="p17" value="2">
+            <label for="p17.2">Estoy mucho mas irritable que lo habitual.</label><br>
+            <input type="radio" id="p17.3" name="p17" value="3">
+            <label for="p17.3">Estoy irritable todo el tiempo.</label><br>
+
+            <h3>Cambios en el apetito</h3>
+            <input type="radio" id="p18.0" name="p18" value="0" required>
+            <label for="p18.0">No he experimentado cambios en el apetito.</label><br>
+            <input type="radio" id="p18.1a" name="p18" value="1">
+            <label for="p18.1a">Mi apetito es un poco menor que lo habitual.</label><br>
+            <input type="radio" id="p18.1b" name="p18" value="1">
+            <label for="p18.1b">Mi apetito es un poco mayor que lo habitual.</label><br>
+            <input type="radio" id="p18.2a" name="p18" value="2">
+            <label for="p18.2a">Mi apetito es mucho mayor que antes.</label><br>
+            <input type="radio" id="p18.2b" name="p18" value="2">
+            <label for="p18.2b">Mi apetito es mucho menor que antes.</label><br>
+            <input type="radio" id="p18.3a" name="p18" value="3">
+            <label for="p18.3a">No tengo apetito en absoluto.</label><br>
+            <input type="radio" id="p18.3b" name="p18" value="3">
+            <label for="p18.3b">Quiero comer todo el dia.</label><br>
+
+            <h3>Dificultad de concentracion</h3>
+            <input type="radio" id="p19.0" name="p19" value="0" required>
+            <label for="p19.0">Puedo concentrarme tan bien como siempre.</label><br>
+            <input type="radio" id="p19.1" name="p19" value="1">
+            <label for="p19.1">No puedo concentrarme tan bien como habitualmente.</label><br>
+            <input type="radio" id="p19.2" name="p19" value="2">
+            <label for="p19.2">Me es dificil mantener la mente en algo por mucho tiempo.</label><br>
+            <input type="radio" id="p19.3" name="p19" value="3">
+            <label for="p19.3">Encuentro que no puedo concentrarme en nada.</label><br>
+
+            <h3>Cansancio o fatiga</h3>
+            <input type="radio" id="p20.0" name="p20" value="0" required>
+            <label for="p20.0">No estoy mas cansado o fatigado que lo habitual.</label><br>
+            <input type="radio" id="p20.1" name="p20" value="1">
+            <label for="p20.1">Me fatigo o me canso mas facilmente que lo habitual.</label><br>
+            <input type="radio" id="p20.2" name="p20" value="2">
+            <label for="p20.2">Estoy demasiado fatigado o cansado para hacer muchas de las cosas que solia hacer.</label><br>
+            <input type="radio" id="p20.3" name="p20" value="3">
+            <label for="p20.3">Estoy demasiado fatigado o cansado para hacer la mayoria de las cosas que solia hacer.</label><br>
+        
+            <h3>Perdida de Interes en el sexo</h3>
+            <input type="radio" id="p21.0" name="p21" value="0" required>
+            <label for="p21.0">No he notado ningun cambio reciente en mi interes por el sexo.</label><br>
+            <input type="radio" id="p21.1" name="p21" value="1">
+            <label for="p21.1">Estoy menos interesado en el sexo de lo que solia estarlo.</label><br>
+            <input type="radio" id="p21.2" name="p21" value="2">
+            <label for="p21.2">Estoy mucho menos interesado en el sexo.</label><br>
+            <input type="radio" id="p21.3" name="p21" value="3">
+            <label for="p21.3">He perdido completamente el interes en el sexo.</label><br>
+            
+            <a class="btn btn-primary" id="btn-encuesta">Enviar</a>
+        </form>
+
+        
+    </form>
+    <script src="static/scripts/encuesta.js"></script>
+</body>
+</html>

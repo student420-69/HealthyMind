@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Mind - Error</title>
+    <link rel="icon" type="image/x-icon" href="static/assets/icon.png" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/styles.css') }}"/>
+</head>
+<body id="error">
+    <style>
+        .masthead {
+            position: relative;
+            width: 100%;
+            height: auto;
+            min-height: 35rem;
+            padding: 15rem 0;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../static/assets/img/error.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            background-size: cover;
+        }
+    </style>
+
+      <header class="masthead">
+        <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+            <div class="d-flex justify-content-center">
+                <div class="text-center">
+                    <h1 class="mx-auto my-0 text-uppercase">Error Detectado</h1>
+                    {% with messages = get_flashed_messages() %} 
+                    {% if messages %}
+                    {% for message in messages %}
+                    <h5 class="text-white-50 mx-auto mt-2 mb-5">{{ message }}</h5>
+                    {% endfor %}
+                    {% endif %} 
+                    {% endwith %}
+                    <h3 class="text-white-50">Presiona la flecha hacia atras.</h3>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <script src="static/scripts/error.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+</html>
